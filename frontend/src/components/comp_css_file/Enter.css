@@ -1,0 +1,138 @@
+#cvrlogo {
+  height: 20px;
+  width: 250px;
+  position: relative;
+  opacity: 20%;
+}
+
+.box {
+  display: flex;
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  width: 220px;
+  height: 90px;
+  color: rgb(0, 0, 0);
+  top: 50%;
+  left: 40%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.box button {
+  position: absolute;
+  border-radius: 8px;
+  left: 40%;
+  transform: translate(-50%, -40%);
+  justify-content: center;
+  margin-left: 10px;
+  color: rgb(19, 19, 209);
+}
+
+#input1 {
+  margin: 10px 10px 10px 15px;
+  text-align: 100px;
+}
+
+.bo {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
+  height: 100px;
+  width: 220px;
+  border-radius: 4px;
+}
+
+#pp {
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(178, 178, 179);
+}
+
+button:hover {
+  color: white;
+  background-color: rgb(72, 84, 251);
+}
+
+#author_name {
+  width: 200px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(159, 159, 159);
+  padding: 2px;
+  position: fixed;
+  bottom: 8%;
+  left: 90%;
+  transform: translateX(-50%);
+}
+
+/* Media Queries */
+
+/* Large screens (desktops) */
+@media (min-width: 1200px) {
+  #cvrlogo {
+    height: 240px;
+    width: 270px;
+  }
+
+  .box {
+    width: 260px;
+    height: 100px;
+  }
+
+  #author_name {
+    left: 85%;
+  }
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+  #cvrlogo {
+    height: 180px;
+    width: 200px;
+  }
+
+  .box {
+    width: 200px;
+    height: 80px;
+    top: 55%;
+    left: 35%;
+  }
+
+  .box button {
+    font-size: 12px;
+  }
+
+  #author_name {
+    width: 180px;
+    bottom: 5%;
+    left: 80%;
+  }
+}
+
+/* Small screens (mobile devices) */
+@media (max-width: 480px) {
+  #cvrlogo {
+    height: 140px;
+    width: 160px;
+    margin-top: 10px;
+  }
+
+  .box {
+    width: 180px;
+    height: 70px;
+    top: 60%;
+    left: 25%;
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  .box button {
+    font-size: 10px;
+    margin: 5px;
+  }
+
+  #author_name {
+    width: 150px;
+    bottom: 4%;
+    left: 70%;
+  }
+}

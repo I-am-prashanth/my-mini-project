@@ -1,0 +1,9 @@
+#buttons{
+    padding:0px 8px 2px 8px;
+    border:solid rgb(0, 0, 0) 1px;
+    border-radius: 8px;
+}
+#buttons:hover {
+    color: white;
+    background-color: rgb(72, 84, 251);
+  }

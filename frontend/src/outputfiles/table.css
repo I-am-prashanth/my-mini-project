@@ -1,0 +1,40 @@
+.table-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  table {
+    width: 80%;
+    margin: 0vh 0vh 0vh 40vh;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  th, td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .grade-f {
+    background-color: #f8d7da;
+    color: #721c24;
+    font-weight: bold;
+  }
+  
+
+  
+
