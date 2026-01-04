@@ -40,7 +40,7 @@
 @media (min-width: 1000px) {
   .box{
     width: 350px;
-    margin: -20px 0px 20px 350px;
+    margin: 20px 0px 10px 510px;
    
   }
     /* Form container */
@@ -64,6 +64,40 @@
   padding-top: 2px;
   /* background-color: aqua; */
 }
+
+}
+
+
+
+@media (max-width: 400px) {
+  
+    /* Form container */
+.inbox{
+    /* margin-top: 30px; */
+    margin: 30px 0px 0px 20px;
+    width: 90vw;
+}
+.form-label{
+  text-wrap: 10;
+  font-family: 'Arial Black' ,sans-serif;
+   color: rgb(88, 88, 88);
+}
+.border-box{
+  width: 90vw;
+  border: solid 1px black;
+  padding: 20px 20px 30px 20px;
+  border-radius:10px;
+}
+
+.form-label{
+  padding-bottom: 2px;
+  padding-top: 2px;
+  /* background-color: aqua; */
+}
+#buttons {
+    font-size: 15px;
+    margin: 30px 0px -100px 110px;
+  }
 
 }
 
