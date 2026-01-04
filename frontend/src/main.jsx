@@ -6,8 +6,10 @@ import Overall from './components/Overall.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import About from './components/About.jsx'
 import Results from './outputfiles/Results.jsx'
-import OverAllResult from './outputfiles/OverAllResults.jsx'
+import OverAllResults from './outputfiles/OverAllResults.jsx'
 import Alldataout from './outputfiles/Alldataout.jsx'
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+const queryClient = new QueryClient();
 const router=createBrowserRouter([
     {
         path:"/",
@@ -16,9 +18,9 @@ const router=createBrowserRouter([
             {path:"",element:<Enterdata />},
             {path:"overall",element:<Overall />},
             {path:"aboutauthors",element:<About />},
-            {path:"results",element:<OverAllResult />},
-            {path:"overallresults",element:<OverAllResult />},
-            {path:"/alldata",element:<Alldataout />}
+            {path:"results",element:<Overall />},
+            {path:"result",element:<OverAllResults />},
+            {path:"alldata",element:<Alldataout />}
         ]
     }
 ]);
@@ -27,7 +29,9 @@ createRoot(document.getElementById('root')).render(
  
     <>
     <StrictMode>
+        <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
+        </QueryClientProvider>
     </StrictMode>
   
     </>

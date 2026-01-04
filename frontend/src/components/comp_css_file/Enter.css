@@ -1,52 +1,52 @@
 #cvrlogo {
-  height: 20px;
-  width: 250px;
+  height: 200px;
+  width: 200px;
   position: relative;
   opacity: 20%;
 }
 
-.box {
+.box_enter {
   display: flex;
-  position: absolute;
-  background-color: rgb(255, 255, 255);
-  width: 220px;
-  height: 90px;
-  color: rgb(0, 0, 0);
-  top: 50%;
-  left: 40%;
-  justify-content: center;
+  height: 50px;
   align-items: center;
-  border-radius: 8px;
+  border-radius: 80px;
 }
 
-.box button {
+.box_enter button {
   position: absolute;
   border-radius: 8px;
-  left: 40%;
-  transform: translate(-50%, -40%);
+  left: 45%;
+  width: 80px;
+  height: 30px;
+  transform: translate(-50%, -50%);
   justify-content: center;
   margin-left: 10px;
-  color: rgb(19, 19, 209);
+  color: rgb(67, 67, 165);
 }
 
 #input1 {
-  margin: 10px 10px 10px 15px;
-  text-align: 100px;
+  margin: 15px 10px 10px 25px;
+  text-align: 10px;
+  height: 35px;
+  width: 200px;
+  /* border: 10px black; */
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 4px;
+
 }
 
 .bo {
   position: absolute;
   background-color: rgb(255, 255, 255);
   border: 1px solid rgb(0, 0, 0);
-  height: 100px;
-  width: 220px;
-  border-radius: 4px;
+  height: 120px;
+  width: 250px;
+  border-radius: 8px;
 }
 
 #pp {
   text-align: center;
   padding: 10px;
-  background-color: rgb(178, 178, 179);
 }
 
 button:hover {
@@ -58,25 +58,26 @@ button:hover {
   width: 200px;
   color: rgb(255, 255, 255);
   background-color: rgb(159, 159, 159);
+  /* margin: 1000px; */
   padding: 2px;
   position: fixed;
   bottom: 8%;
   left: 90%;
-  transform: translateX(-50%);
 }
 
 /* Media Queries */
 
 /* Large screens (desktops) */
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
+   
+
   #cvrlogo {
-    height: 240px;
-    width: 270px;
+    height: 200px;
+    width: 250px;
   }
 
-  .box {
-    width: 260px;
-    height: 100px;
+  .box_enter {
+    margin: 100pX 0px 0px 370px;
   }
 
   #author_name {
@@ -86,17 +87,19 @@ button:hover {
 
 /* Medium screens (tablets) */
 @media (max-width: 768px) {
+  
   #cvrlogo {
     height: 180px;
     width: 200px;
   }
 
-  .box {
-    width: 200px;
+  /* .box {
+    width: 20px;
     height: 80px;
     top: 55%;
     left: 35%;
-  }
+    margin: 100px;
+  } */
 
   .box button {
     font-size: 12px;
@@ -112,16 +115,18 @@ button:hover {
 /* Small screens (mobile devices) */
 @media (max-width: 480px) {
   #cvrlogo {
-    height: 140px;
-    width: 160px;
-    margin-top: 10px;
+    height:220px;
+    width: 300px;
+    /* margin-top: 10px; */
+    margin: -50px 0px 0px 0px;
   }
 
-  .box {
-    width: 180px;
-    height: 70px;
-    top: 60%;
-    left: 25%;
+  .box_enter {
+    width: 30px;
+    /* height: 0px; */
+    margin: 200PX 0PX 0PX 200PX;
+
+    
     flex-direction: column; /* Stack elements vertically */
   }
 

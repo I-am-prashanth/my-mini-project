@@ -1,17 +1,18 @@
 {
   "dependencies": {
+    "@supabase/supabase-js": "^2.56.0",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "mongoose": "^8.9.4",
     "mysql2": "^3.12.0",
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.10"
   },
   "name": "backend",
   "version": "1.0.0",
   "main": "Databases.js",
   "type": "module",
   "scripts": {
-    "start": "node Databases.js"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",

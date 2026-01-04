@@ -1,48 +1,52 @@
 .banner-container {
-    background-color: #000; /* Black background */
+    background-color: #ffffff; /* Black background */
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50vw;
-    padding: 21px;
+    width: 60vw;
     height: 90px;
-    border-radius: 8px;
-    margin: 6vh 25vw 8vh 25vw;
+    border-radius:8px;
+    border: solid 1px;
+    padding: 2px;
+    margin: 5vh 0 8vh 20vw;
+    /* text-shadow: #000000; */
 }
+
 
 .banner-content {
     display: flex;
     align-items: center;
-    color: #f5f5f5; /* White text */
+    color: #000000; /* White text */
     width: 100%;
     max-width: 1200px; /* Adjust width for alignment */
 }
 
 .banner-logo {
-    height: 80px; /* Adjust logo size */
-    margin-right: 20px; /* Space between logo and text */
+    /* height: 7000px;  */
+    /* margin-right: 20px; Space between logo and text */
 }
 
 .banner-text {
     text-align: left;
+
 }
 
 .banner-text h1 {
-    font-size: 28px; /* Adjust font size for heading */
+    font-size: 25px; /* Adjust font size for heading */
     margin: 0;
     font-weight: bold;
 }
 
 .banner-text p {
     font-size: 14px; /* Adjust font size for subtext */
-    margin: 5px 0 0 0;
+    margin: 2px 0 0 0;
     font-style: italic;
 }
 
 /* Media Queries */
 
 /* For large screens (desktops) */
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
     .banner-container {
         width: 60vw;
         height: 100px;
@@ -50,7 +54,7 @@
     }
 
     .banner-logo {
-        height: 100px;
+        height: 90px;
     }
 
     .banner-text h1 {
@@ -72,7 +76,7 @@
     }
 
     .banner-logo {
-        height: 60px;
+        height: 6px;
     }
 
     .banner-text h1 {
@@ -88,23 +92,24 @@
 @media (max-width: 480px) {
     .banner-container {
         width: 90vw;
-        height: auto;
-        margin: 4vh 5vw;
-        flex-direction: column; /* Stack content vertically */
+        height: 90px;
+        margin: 1vh 5vw;
+        /* flex-direction: column; */
+     
         text-align: center;
         padding: 10px;
     }
 
     .banner-logo {
-        height: 50px;
-        margin: 0 0 10px 0;
+        height: 79px;
+        /* margin: 0 0 10px 0; */
     }
 
     .banner-text h1 {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .banner-text p {
-        font-size: 10px;
+        font-size: 11px;
     }
 }

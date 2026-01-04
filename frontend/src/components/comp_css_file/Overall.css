@@ -1,9 +1,69 @@
+
 #buttons{
-    padding:0px 8px 2px 8px;
-    border:solid rgb(0, 0, 0) 1px;
-    border-radius: 8px;
+  margin: 20px 0px 30px 110px;
+  border-radius:10px;
+  
 }
-#buttons:hover {
-    color: white;
-    background-color: rgb(72, 84, 251);
+/* Mobile view */
+@media (max-width: 768px) {
+  
+    /* Form container */
+.inbox{
+    /* margin-top: 30px; */
+    margin: 30px 0px 0px 40px;
+    width: 350px;
+}
+.form-label{
+  text-wrap: 10;
+  font-family: 'Arial Black' ,sans-serif;
+   color: rgb(88, 88, 88);
+}
+.border-box{
+  width: 350px;
+  border: solid 1px black;
+  padding: 20px 20px 30px 20px;
+  border-radius:10px;
+}
+
+.form-label{
+  padding-bottom: 2px;
+  padding-top: 2px;
+  /* background-color: aqua; */
+}
+#buttons {
+    font-size: 15px;
+    margin: 30px 0px -100px 110px;
   }
+
+}
+
+@media (min-width: 1000px) {
+  .box{
+    width: 350px;
+    margin: -20px 0px 20px 350px;
+   
+  }
+    /* Form container */
+.inbox{
+    width: 350px;
+}
+.form-label{
+  text-wrap: 10;
+   color: rgb(88, 88, 88);
+}
+.border-box{
+  width: 300w;
+  height: 450px;
+  border: solid 1px black;
+  padding: 20px 20px 30px 20px;
+  border-radius:10px;
+}
+
+.form-label{
+  padding-bottom: 2px;
+  padding-top: 2px;
+  /* background-color: aqua; */
+}
+
+}
+

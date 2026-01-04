@@ -72,18 +72,7 @@ export default function Enterdata() {
                         }
                         
        if(verifyhall){                 
-        navigate("/results",{state:{from:"oneperson"}})
-      try {
-        const response=await axios.post("/api/result",{
-            ticket:halllast
-        })
-        // console.log(" data went sucesullf",halllast)
-        // navigate("/results",{state:{from:"oneperson"}})
-        
-      } catch (error) {
-        console.log("dosent able to coonect",error)
-        
-      }
+        navigate("/result",{state:{from:"oneperson",roll:usehallticket}})
     }
   }
       
@@ -93,12 +82,12 @@ export default function Enterdata() {
     <div>
          <>
  
-        <div className="box" >
+        <div className="box_enter" >
            <Cvrlogo />
             <form className="bo" onSubmit={checkhallticket} >
-                <input  id="input1" type="text" name="ticket" placeholder="enter hallticket" required
+                <input  id="input1" type="text" name="ticket" placeholder="     enter hallticket number" required
                 
-                value={usehallticket} onChange={(e)=>sethallticket(e.target.value)}
+                  value={usehallticket} onChange={(e)=>sethallticket(e.target.value)}
                 ></input>
                 <br /><br />
                 

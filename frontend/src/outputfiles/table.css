@@ -1,40 +1,122 @@
-.table-container {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  table {
-    width: 80%;
-    margin: 0vh 0vh 0vh 40vh;
-    border-collapse: collapse;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  th, td {
-    text-align: center;
-    padding: 10px;
-    border: 1px solid #ddd;
-  }
-  
-  th {
-    background-color: #f4f4f4;
-    font-weight: bold;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .grade-f {
-    background-color: #f8d7da;
-    color: #721c24;
-    font-weight: bold;
-  }
-  
+/* ===========================
+   Table Styling
+=========================== */
 
-  
+#spinner{
+  width: 100px;
+  height: 100px;
+  margin-left: 450px;
+  margin-top: 100px;
+}
+#sem_number{
+  text-align: center;
+  background-color: rgb(232, 237, 237);
+  /* padding: 5px 0px 5px -450px; */
+  width: 1000px;
+  margin: 0px 0px 0px 25px;
+}
+#no_data{
+  text-align: center;
+  background-color: rgb(232, 237, 237);
+  padding: 10px;
+  color: #ed7070;
+  text-shadow: #392020 20px;
+  width: 500px;
+  margin: 10px 0px 0px 300px;
+}
+#table table {
+  width: 65%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden; /* keeps rounded corners */
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  /* background: #fff; */
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
 
+/* ===========================
+   Table Header
+=========================== */
+#table th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 2px solid #ddd;
+  /* border: solid 1px black; */
+  /* border-radius: 3px; */
+  
+}
+
+/* ===========================
+   Table Cells
+=========================== */
+#table td {
+  padding: 3px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  /* border: solid 1px black; */
+  /* border-radius: 3px; */
+}
+
+/* ===========================
+   Row Effects
+=========================== */
+#table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+#table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* ===========================
+   Grade Styling
+=========================== */
+.table-cell.fail,
+.grade-f {
+  background-color: #ed7070;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+/* ===========================
+   Responsive Styling
+=========================== */
+@media (max-width: 768px) {
+  #table table {
+    width: 90%;
+    font-size: 12px;
+  }
+
+  #table th,
+  #table td {
+    padding: 8px;
+  }
+  #no_data{
+  text-align: center;
+  background-color: rgb(232, 237, 237);
+  padding: 10px;
+  color: #ed7070;
+  text-shadow: #392020 20px;
+  width: 380px;
+  margin: 10px 0px 0px 30px;
+  border-radius: 8px;
+}
+#sem_number{
+  text-align: center;
+  background-color: rgb(232, 237, 237);
+  /* padding: 5px 0px 5px -450px; */
+  padding: 3px;
+  width: 380px;
+  margin: 0px 0px 0px 25px;
+}
+
+}

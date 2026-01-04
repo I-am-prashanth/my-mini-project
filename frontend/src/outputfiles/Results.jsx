@@ -14,26 +14,29 @@ function Results(props) {
 
   return (
     
+    
     <div>
-      
-      {loading?(data!==null?( 
+      {console.log(props.index)}
+      {loading?(Object.keys(data)?.length>3?( 
         <  >
-      
         <div id="table">
-
-        <table border="2" style={{ borderCollapse: "separate", width: "60%", textAlign: "left",borderRadius:"8px"  }}>
+          {
+          // console.log(data)
+}
+        <table  >
         <thead>
           <tr>
-            <th padding="10px">Subject</th>
-            <th padding="10px">Grade</th>
+            <th >Subject</th>
+            <th>Grade</th>
           </tr>
         </thead>
         <tbody >
           {Object.entries(data).map(([key, value]) => {
+            // if()
             return (
               <tr key={key }>
-                <td style={{border:"1px solid black",padding:"2px",borderRadius:"8px"}}>{key.replace(/_/g, " ")} </td> {/* Replace underscores with spaces */}
-                <td style={{border:"1px solid black",padding:"2px",borderRadius:"8px", backgroundColor:value==='F'?"#ed7070":"white"}} >{value}</td>
+                <td >{key.replace(/_/g, " ")} </td> {/* Replace underscores with spaces */}
+                <td className={`table-cell ${value==='F'?'fail':''}`}>{value}</td>
               </tr>
             );
           })}
@@ -43,7 +46,7 @@ function Results(props) {
         </div>
       
      
-      </>):(<h1>Data is not updated{from}</h1>)):(<h1>loading...</h1>)
+      </>):(<h1 id="no_data">Data is not updated / With Held</h1>)):(<h1>loading...</h1>)
    
       }
       </div>

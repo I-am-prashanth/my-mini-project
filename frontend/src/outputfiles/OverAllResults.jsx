@@ -1,70 +1,77 @@
-import { useState,useEffect } from "react";
-import Results from "./Results";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import Alldataout from "./Alldataout";
+import { useMutation  } from '@tanstack/react-query'
+import Results from "./Results";
+// import './src/components/comp_css_file/Overall.css'
+import "./table.css"
+import axios from "axios";
 
-
-function OverAllResult(){
-const [data,setdata]=useState(null);
-const [loading,setloading]=useState(true);
-const location=useLocation();
-const from=location.state?.from||"unkonow";
-
-const callsite=async()=>{
-    try{
-        let url='api/results'
-        console.log({from})
-        // let currenturl=window.location.href;
-        if(from=="oneperson"){
-         url='api/result'
-        }
-        let responce=await fetch(url);
-
-        if(!responce.ok){
-            throw new Error(`Http error! status:${responce.status}`)
-        }
-        let result=await responce.json();
-        setdata(result);
-    }catch(err){
-        console.log("error occured:",err)
-    }
-    finally{
-        setloading(false)
-       
-    }
-}
-
-useEffect(()=>{
-    callsite();
-},[]);
-
-return(
-    <>
-    {/* <div style={{backgroundColor:"grey"}}>
-    <h1 style={{padding:"10px",margin:"0px 0px 0px 30vw"}}>Overall sem results are:{from}</h1>
-    </div> */}
-    <div>
-      {loading?(<h1>loading....</h1>):(from=="oneperson"?(
-        <>
-    {data?.map((element,index)=>(
-       <div key={index}>
-      
-      <h1 style={{padding:"10px 0px 10px 45vw",bacgroungColor:"green"}} >Sem{index+1} </h1>
-        <Results key={index} obj={element} index={index} />
-        <hr ></hr>
-        </div>
-    ))}
-    <h1 style={{padding:"10px",margin:"10px 0px 0px 45vw"}}>THE END</h1>
-    </>):(<>
-        <Alldataout dd={data}/>
-       {/* { console.log("tghis is from asjdnas   ",data)} */}
-    </>
-        )
+const OverAllResults = () => {
+    const location = useLocation();
+    const{roll}=location.state || "22B81A0416"
     
-    )}
-    </div>
-  </>
-)
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);  // ✅ Added missing state for errors
 
-}
-export default OverAllResult;
+    const {mutate:fetchdata}=useMutation ({
+       mutationFn: async(RollNumber)=>{
+          try{
+            console.log("entered",RollNumber)
+           const res = await fetch("/api/name", {
+  method: "POST", 
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body:JSON.stringify({roll:RollNumber})
+});
+            const data=await res.json();  
+            console.log(data)
+            setData(data);
+
+            setLoading(false);
+
+          }catch(error){
+            console.log(error);
+
+          }
+       },
+
+      
+    })
+
+    useEffect(() => {
+      setLoading(true);
+        fetchdata(roll);
+    }, []);
+
+    return (
+        <>
+      <div>
+       
+        {loading ? (
+          <>
+          <div class="spinner-border text-secondary" id="spinner" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+
+          </>
+        ):(
+          <>
+            {data?.map((element, index) => (
+              
+              <div key={index}>
+                <h1 id="sem_number">SEM-{index+1}</h1>
+                <Results key={index} obj={element} index={index} />
+                <hr />
+              </div>
+            ))}
+            <h1 id="sem_number">THE END</h1>
+          </>
+        )}
+      </div>
+    </>
+    );
+};
+
+export default OverAllResults;

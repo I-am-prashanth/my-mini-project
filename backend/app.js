@@ -1,52 +1,35 @@
-import express from 'express'
-import {getdata} from './Databases.js'
-import { getdatas } from './Databases.js';
+import express from 'express';
+import {  fetchSub, fetchsubjects, getdatas, } from './Databases.js';
+
+import { config } from 'dotenv';
 
 
-let pp=64;
-const app=express();
+const app = express();
+config();
 app.use(express.json());
 
 
-app.get("/",async (req,res)=>{
-    res.send("<h1>this is api page</h1>")
+
+
+app.get("/",(req,res)=>{
+    res.status(200).json({name:"kjsdjfvksj"})
+    // es.status(500).json({message:error.message})
 })
 
-app.post("/api/result",async (req,res)=>{
-    const rr=req.body.ticket;
-    console.log(pp," ",rr);
-    pp=rr;
-})
+app.post("/api/name",getdatas)
+app.post("/api/result",fetchSub)
+app.post("/api/getsubjects",fetchsubjects);
 
-app.post("/api/results",async (req,res)=>{
-    const rr=req.body.ticket;
-    console.log(pp," ",rr);
-    pp=rr;
-})
 
-app.get("/api/result",async (req,res)=>{
-    console.log(pp)
-    let mm=await getdata(pp);
-    console.log(mm)
-    res.send(mm);
+
+
+
+app.use((err, req, res, next) => {
+    console.error("🔥 Uncaught Error:", err);
+    res.status(500).send('Something went wrong!');
+});
+
+app.listen(5000, () => {
     
-})
-
-app.get("/api/results",async (req,res)=>{
-    const  sem= 'sem_1'
-    const subject=" matrix_and_calculus  "
-    const grade="'A+'"
-    const mm=await getdatas(sem,subject,grade);
-    // console.log(mm)
-    res.send(mm);
-    
-})
-
-
-app.use((err,req,res,next)=>{
-    res.status(500).send('something broken')
-})
-
-app.listen(8080,()=>{
-    console.log('server is running at 8080')
-})
+    console.log('🚀 Server running on port 8080');
+});
